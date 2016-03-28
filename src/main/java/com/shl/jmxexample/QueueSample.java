@@ -4,7 +4,7 @@
  * size and the queue head.
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 import java.beans.ConstructorProperties;
 import java.util.Date;

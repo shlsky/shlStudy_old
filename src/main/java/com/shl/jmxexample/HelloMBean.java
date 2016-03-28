@@ -4,7 +4,7 @@
  * "sayHello" and "add", and two attributes, "Name" and "CacheSize".
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 public interface HelloMBean {
     //-----------

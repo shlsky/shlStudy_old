@@ -4,7 +4,7 @@
  * MBean server, then wait forever (or until the program is interrupted).
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 import java.lang.management.ManagementFactory;
 import java.util.Queue;
@@ -20,7 +20,7 @@ public class Main {
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
 
 	// Construct the ObjectName for the Hello MBean we will register
-	ObjectName mbeanName = new ObjectName("com.shl.example:type=Hello");
+	ObjectName mbeanName = new ObjectName("com.shl.jmxexample:type=Hello");
 
 	// Create the Hello World MBean
 	Hello mbean = new Hello();
@@ -29,7 +29,7 @@ public class Main {
 	mbs.registerMBean(mbean, mbeanName);
 
         // Construct the ObjectName for the QueueSampler MXBean we will register
-        ObjectName mxbeanName = new ObjectName("com.shl.example:type=QueueSampler");
+        ObjectName mxbeanName = new ObjectName("com.shl.jmxexample:type=QueueSampler");
 
         // Create the Queue Sampler MXBean
         Queue<String> queue = new ArrayBlockingQueue<String>(10);

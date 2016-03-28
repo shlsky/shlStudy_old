@@ -4,7 +4,7 @@
  * QueueSamplerMXBean interface, with the appropriate behavior for each one.
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 import java.util.Date;
 import java.util.Queue;

@@ -4,7 +4,7 @@
  * with the appropriate behavior for each one.
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 import javax.management.*;
 
@@ -23,7 +23,7 @@ public class Hello
        getter returns a private field representing the attribute value. In our
        case, the attribute value never changes, but for other attributes it
        might change as the application runs. Consider an attribute representing
-       statistics such as uptime or memory usage, for example. Being read-only
+       statistics such as uptime or memory usage, for jmxexample. Being read-only
        just means that it can't be changed through the management interface. */
     public String getName() {
 	return this.name;
@@ -45,7 +45,7 @@ public class Hello
 
 	/* In a real application, changing the attribute would
 	   typically have effects beyond just modifying the cacheSize
-	   field.  For example, resizing the cache might mean
+	   field.  For jmxexample, resizing the cache might mean
 	   discarding entries or allocating new ones. The logic for
 	   these effects would be here. */
 	System.out.println("Cache size now " + this.cacheSize);

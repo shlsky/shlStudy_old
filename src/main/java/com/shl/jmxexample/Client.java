@@ -4,18 +4,16 @@
  * MXBean example. It also listens for Hello MBean notifications.
  */
 
-package com.shl.example;
+package com.shl.jmxexample;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 import javax.management.AttributeChangeNotification;
 import javax.management.JMX;
 import javax.management.MBeanServerConnection;
 import javax.management.Notification;
-import javax.management.NotificationEmitter;
 import javax.management.NotificationListener;
 import javax.management.ObjectName;
 import javax.management.remote.JMXConnector;
@@ -104,7 +102,7 @@ public class Client {
 
         // Construct the ObjectName for the Hello MBean
         //
-        ObjectName mbeanName = new ObjectName("com.example:type=Hello");
+        ObjectName mbeanName = new ObjectName("com.jmxexample:type=Hello");
 
         // Create a dedicated proxy for the MBean instead of
         // going directly through the MBean server connection
@@ -158,7 +156,7 @@ public class Client {
         // Construct the ObjectName for the QueueSampler MXBean
         //
         ObjectName mxbeanName =
-            new ObjectName("com.example:type=QueueSampler");
+            new ObjectName("com.jmxexample:type=QueueSampler");
 
         // Create a dedicated proxy for the MXBean instead of
         // going directly through the MBean server connection
