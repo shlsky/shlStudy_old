@@ -1,4 +1,4 @@
-package com.shl.aop;
+package com.shl.aop.cglib;
 
 /**
  * Created by jackson on 16/2/19.
@@ -11,5 +11,6 @@ public class AopTest {
         SayHello proxyImp = (SayHello)proxy.getProxy(SayHello.class);
         proxyImp.say();
         proxyImp.say1();
+        proxyImp.say2();
     }
 }

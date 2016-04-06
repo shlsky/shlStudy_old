@@ -1,4 +1,4 @@
-package com.shl.aop;
+package com.shl.aop.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
