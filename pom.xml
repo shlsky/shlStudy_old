@@ -9,6 +9,7 @@
         <module>springaop</module>
         <module>javajmx</module>
         <module>zkstudy</module>
+        <module>BA</module>
     </modules>
     <name>shlstudy-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
