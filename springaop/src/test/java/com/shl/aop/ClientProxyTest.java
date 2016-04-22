@@ -1,3 +1,5 @@
+package com.shl.aop;
+
 import com.shl.aop.dynamicProxy.ISayhelloService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -29,7 +29,7 @@ public class ListMain {
 
         for (OptionStudy _i : filter){
 
-            System.out.println(_i.toString());
+            System.out.println(_i.toString()+_i.getAge());
         }
 
         System.out.println(filter.size());
