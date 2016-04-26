@@ -18,16 +18,19 @@ public class ClientInvokeInterceptor implements MethodInterceptor {
     }
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
+
+        System.out.println("advice shl shl success!!!");
+        invocation.getMethod().invoke(instance,invocation.getArguments());
+        System.out.println("advice shl shl success!!!");
+
+        /*
         System.out.println("advice shl shl success!!!");
         System.out.println(invocation.getMethod()+" "+invocation.getArguments()[0]);
         for (Method method : instance.getClass().getDeclaredMethods()){
             if (method.getName().equals(invocation.getMethod().getName())){
                 method.invoke(instance,invocation.getArguments());
-            }else{
-                System.out.println("can't find method !!!!" + method.getName());
             }
-
-        }
+        }*/
 
         //invocation.proceed();
         return null;

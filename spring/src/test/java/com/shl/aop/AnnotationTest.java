@@ -18,6 +18,7 @@ public class AnnotationTest {
 
     @Autowired
     private TestPoiAnnotatiomService testPoiAnnotatiomService;
+
     @Test
     public void test() {
         testPoiAnnotatiomService.syyhello();

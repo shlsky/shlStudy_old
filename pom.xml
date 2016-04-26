@@ -14,6 +14,7 @@
         <module>nettyDemo</module>
         <module>javaconcurrent</module>
         <module>guava</module>
+        <module>Log4j</module>
     </modules>
     <name>shlstudy-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -218,11 +219,28 @@
             <version>1.2.4</version>
         </dependency>
 
-        <!--hotellib -->
         <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>mschedule-client</artifactId>
-            <version>1.7.0</version>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.15</version>
+            <exclusions>
+                <!--<exclusion>-->
+                <!--<groupId>javax.mail</groupId>-->
+                <!--<artifactId>mail</artifactId>-->
+                <!--</exclusion>-->
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jdmk</groupId>
+                    <artifactId>jmxtools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jmx</groupId>
+                    <artifactId>jmxri</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
