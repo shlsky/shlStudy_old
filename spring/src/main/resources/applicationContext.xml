@@ -14,16 +14,16 @@
     <import resource="spring/springbean.xml"/>
     <context:annotation-config/>
     <!--添加扫描包路径,不扫描Controller注解的类,@Controller由view-servlet.xml扫描-->
-    <!--<context:component-scan base-package="com.shl.aop">-->
-        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
-    <!--</context:component-scan>-->
-
-    <context:component-scan base-package="com.shl.aop.dynamicProxy">
+    <context:component-scan base-package="com.shl.aop.*">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <!--<context:component-scan base-package="com.shl.aop.dynamicProxy">-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--</context:component-scan>-->
+
     <!--此处如果false,com.shl.aop.annotation的切面会有问题,因为java动态代理需要接口-->
-    <aop:aspectj-autoproxy proxy-target-class="false"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
 
 

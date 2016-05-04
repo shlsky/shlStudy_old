@@ -1,4 +1,4 @@
-package java.com.shl.netty;
+package com.shl.netty;
 
 /**
  * Created by jackson on 16/4/13.

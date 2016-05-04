@@ -11,7 +11,7 @@ public class Zkconnection implements Watcher{
 
     private static final int SESSION_TIMEOUT = Integer.MAX_VALUE;
 
-    private static final String CONNECT_URL_PORT = "127.0.0.1:2181";
+    private static final String CONNECT_URL_PORT = "127.0.0.1:2182";
 
     private static final String ZK_PATH = "/study";
 
@@ -84,9 +84,9 @@ public class Zkconnection implements Watcher{
                 System.out.println( "数据内容: " + zkconnection.readData( ZK_PATH ) + "\n" );
                 zkconnection.writeData( ZK_PATH, "更新后的数据" );
                 System.out.println( "数据内容: " + zkconnection.readData( ZK_PATH ) + "\n" );
-                zkconnection.deleteNode( ZK_PATH );
+//                zkconnection.deleteNode( ZK_PATH );
             }
-
+            Thread.sleep(20000);
             zkconnection.closeZkInstance(zkconnection.getZooKeeper());
 
         }catch (Exception e){

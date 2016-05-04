@@ -635,26 +635,6 @@
             <version>${jetty-servlets.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mt-service-http</artifactId>
-            <version>${mt-service-http.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpmc-common</artifactId>
-            <version>${mtpmc-common.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpmc-remote-service</artifactId>
-            <version>${mtpmc-remote-service.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpoiop-remote-service</artifactId>
-            <version>${mtpoiop-remote-service.version}</version>
-        </dependency>
 
         <!-- 美团账号系统  -->
         <dependency>

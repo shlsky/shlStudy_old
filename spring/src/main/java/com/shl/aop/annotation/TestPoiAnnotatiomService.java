@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by jackson on 16/1/28.
  */
-@Service
+@Service(value = "testPoiAnnotatiomService")
 public class TestPoiAnnotatiomService {
     @Autowired
     private StatpoitestService statpoitestService;

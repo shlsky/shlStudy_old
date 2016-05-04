@@ -14,27 +14,44 @@ import org.apache.thrift.transport.TTransportException;
  */
 public class ServerMain {
     public static void main(String[] args) {
-        try {
 
-            //服务端端口
-            TServerSocket tServerSocket = new TServerSocket(8888);
+            Thread server = new Thread() {
 
-            //传输协议
-            TBinaryProtocol.Factory proFactory = new TBinaryProtocol.Factory();
+                @Override
+                public void run() {
+                    try {
+                        //服务端端口
+                        TServerSocket tServerSocket = new TServerSocket(8888);
 
-            //实例化处理器
-            TProcessor processor = new ShlShopBooking.Processor(new ShlShopBookingImpl());
+                        //传输协议
+                        TBinaryProtocol.Factory proFactory = new TBinaryProtocol.Factory();
 
-            TThreadPoolServer.Args serverArgs = new TThreadPoolServer.Args(tServerSocket);
-            serverArgs.processor(processor);
-            serverArgs.protocolFactory(proFactory);
+                        //实例化处理器
+                        TProcessor processor = new ShlShopBooking.Processor(new ShlShopBookingImpl());
 
-            //实例化服务
-            TServer server = new TThreadPoolServer(serverArgs);
-            System.out.println("Start server on port 8888...");
-            server.serve();
-        } catch (TTransportException e) {
-            e.printStackTrace();
-        }
+                        TThreadPoolServer.Args serverArgs = new TThreadPoolServer.Args(tServerSocket);
+                        serverArgs.processor(processor);
+                        serverArgs.protocolFactory(proFactory);
+
+                        //实例化服务
+                        TServer server = new TThreadPoolServer(serverArgs);
+                        System.out.println("Start server on port 8888...");
+                        server.serve();
+                    } catch (TTransportException e) {
+                        e.printStackTrace();
+                    } finally {
+                        System.out.println("hahahaha hahaha");
+                    }
+                }
+            };
+            server.start();
+            try {
+                System.out.println("waiting");
+                server.join();
+                System.out.println("finish");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
     }
 }

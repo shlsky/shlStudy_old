@@ -1,30 +1,10 @@
-[26/04/16 15:49:32:032]  INFO com.log4j.study.Log4jMain: log something.....10
-[26/04/16 15:49:32:032]  INFO model1: log info model1 something.....10
-[26/04/16 15:49:32:032] DEBUG model1: log debug model1 something.....10
-[26/04/16 15:49:33:033]  INFO com.log4j.study.Log4jMain: log something.....11
-[26/04/16 15:49:33:033]  INFO model1: log info model1 something.....11
-[26/04/16 15:49:33:033] DEBUG model1: log debug model1 something.....11
-[26/04/16 15:49:34:034]  INFO com.log4j.study.Log4jMain: log something.....12
-[26/04/16 15:49:34:034]  INFO model1: log info model1 something.....12
-[26/04/16 15:49:34:034] DEBUG model1: log debug model1 something.....12
-[26/04/16 15:49:35:035]  INFO com.log4j.study.Log4jMain: log something.....13
-[26/04/16 15:49:35:035]  INFO model1: log info model1 something.....13
-[26/04/16 15:49:35:035] DEBUG model1: log debug model1 something.....13
-[26/04/16 15:49:36:036]  INFO com.log4j.study.Log4jMain: log something.....14
-[26/04/16 15:49:36:036]  INFO model1: log info model1 something.....14
-[26/04/16 15:49:36:036] DEBUG model1: log debug model1 something.....14
-[26/04/16 15:49:37:037]  INFO com.log4j.study.Log4jMain: log something.....15
-[26/04/16 15:49:37:037]  INFO model1: log info model1 something.....15
-[26/04/16 15:49:37:037] DEBUG model1: log debug model1 something.....15
-[26/04/16 15:49:38:038]  INFO com.log4j.study.Log4jMain: log something.....16
-[26/04/16 15:49:38:038]  INFO model1: log info model1 something.....16
-[26/04/16 15:49:38:038] DEBUG model1: log debug model1 something.....16
-[26/04/16 15:49:39:039]  INFO com.log4j.study.Log4jMain: log something.....17
-[26/04/16 15:49:39:039]  INFO model1: log info model1 something.....17
-[26/04/16 15:49:39:039] DEBUG model1: log debug model1 something.....17
-[26/04/16 15:49:40:040]  INFO com.log4j.study.Log4jMain: log something.....18
-[26/04/16 15:49:40:040]  INFO model1: log info model1 something.....18
-[26/04/16 15:49:40:040] DEBUG model1: log debug model1 something.....18
-[26/04/16 15:49:41:041]  INFO com.log4j.study.Log4jMain: log something.....19
-[26/04/16 15:49:41:041]  INFO model1: log info model1 something.....19
-[26/04/16 15:49:41:041] DEBUG model1: log debug model1 something.....19
+2016-05-02 15:01:24,664 INFO  service(Log4jMain.java:25) ## log info model1 something.....10
+2016-05-02 15:01:25,668 INFO  service(Log4jMain.java:25) ## log info model1 something.....11
+2016-05-02 15:01:26,673 INFO  service(Log4jMain.java:25) ## log info model1 something.....12
+2016-05-02 15:01:27,677 INFO  service(Log4jMain.java:25) ## log info model1 something.....13
+2016-05-02 15:01:28,682 INFO  service(Log4jMain.java:25) ## log info model1 something.....14
+2016-05-02 15:01:29,687 INFO  service(Log4jMain.java:25) ## log info model1 something.....15
+2016-05-02 15:01:30,692 INFO  service(Log4jMain.java:25) ## log info model1 something.....16
+2016-05-02 15:01:31,697 INFO  service(Log4jMain.java:25) ## log info model1 something.....17
+2016-05-02 15:01:32,702 INFO  service(Log4jMain.java:25) ## log info model1 something.....18
+2016-05-02 15:01:33,707 INFO  service(Log4jMain.java:25) ## log info model1 something.....19

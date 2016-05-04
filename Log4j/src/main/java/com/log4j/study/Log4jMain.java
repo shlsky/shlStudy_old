@@ -15,7 +15,7 @@ public class Log4jMain {
     /**
      * 自定义model1 logger
      */
-    private static final Logger MODEL_LOG1 = LoggerFactory.getLogger("model1");
+    private static final Logger MODEL_LOG1 = LoggerFactory.getLogger("service");
 
     public static void printLog(int i) {
         LOG.info("log something....." + i);

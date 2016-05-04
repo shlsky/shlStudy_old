@@ -16,6 +16,9 @@ import org.apache.thrift.transport.TTransportException;
 public class ClientMain {
 
     public static void main(String[] args) {
+
+
+
         TTransport transport = new TSocket("localhost", 8888);
         try {
             // 设置调用的服务地址为本地，端口为 7911
@@ -26,8 +29,13 @@ public class ClientMain {
             ShlShopBooking.Client client = new ShlShopBooking.Client(protocol);
             transport.close();
             transport.open();
-            // 调用服务的 helloVoid 方法
-            client.shlbooking(new BookingModel());
+
+            for (int i = 0 ;i<100;i++){
+                // 调用服务的 helloVoid 方法
+                Thread.sleep(1000);
+                client.shlbooking(new BookingModel());
+            }
+
             System.out.println("Success!!");
             transport.close();
         } catch (TTransportException e) {
@@ -36,7 +44,9 @@ public class ClientMain {
             e.printStackTrace();
         } catch (SHLException e) {
             e.printStackTrace();
-        } finally {
+        } catch (Exception e){
+
+        } finally{
             transport.close();
         }
     }
