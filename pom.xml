@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>springaop</module>
+        <module>spring</module>
         <module>javajmx</module>
         <module>zkstudy</module>
         <module>BA</module>
@@ -30,6 +30,7 @@
         <mtpmc-remote-service.version>1.7.33</mtpmc-remote-service.version>
         <mtpoiop-remote-service.version>1.3.7-SNAPSHOT</mtpoiop-remote-service.version>
         <mt-service-http.version>1.1.6</mt-service-http.version>
+        <retrofit.version>2.0.2</retrofit.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,7 +38,28 @@
             <artifactId>mms-boot</artifactId>
             <version>0.8</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>retrofit</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-jackson</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-simplexml</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
         <!-- spring -->
+
+
 
         <dependency>
             <groupId>org.springframework</groupId>
