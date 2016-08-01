@@ -15,6 +15,8 @@
         <module>javaconcurrent</module>
         <module>guava</module>
         <module>Log4j</module>
+        <module>jvm</module>
+        <module>Hystrix</module>
     </modules>
     <name>shlstudy-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -442,7 +444,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>13.0.1</version>
+            <version>18.0</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
