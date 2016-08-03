@@ -95,14 +95,14 @@ public class HystrixTest {
                 if (i%4 == 0){
                     executorService.submit(new MultiThread(new SayHelloExtendService("SHL0","SHL0",helloService,"study")));
 //                    SayHelloExtendService helloExtendService = new SayHelloExtendService("SHL0","SHL0",helloService,"study");
-//                    helloExtendService.execute();
+//                    String res = helloExtendService.execute();
 //                    System.out.println();
                 }
 
                 else if (i%3 == 0){
                     executorService.submit(new MultiThread(new SayHelloExtendService("SHL1","SHL1",helloService,null)));
 //                    SayHelloExtendService helloExtendService = new SayHelloExtendService("SHL1","SHL1",helloService,null);
-//                    helloExtendService.execute();
+//                    String res = helloExtendService.execute();
 //                    System.out.println();
                 }
 //                else{
