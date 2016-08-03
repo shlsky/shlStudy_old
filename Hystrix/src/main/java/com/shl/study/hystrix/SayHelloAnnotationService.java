@@ -2,6 +2,9 @@ package com.shl.study.hystrix;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
 
@@ -9,7 +12,7 @@ import org.springframework.stereotype.Service;
  * Created by jackson on 16/8/1.
  */
 @Service
-public class SayHelloService {
+public class SayHelloAnnotationService {
 
     @HystrixCommand(groupKey = "service",commandKey="sayHello",fallbackMethod = "sayHelloFallBack",
             commandProperties = {
@@ -38,5 +41,17 @@ public class SayHelloService {
         return null;
     }
 
+    public String sayBye(String name) throws Exception{
+
+        System.out.println("init init sayBye!");
+        if (name == null)
+            throw new NullPointerException();
+        if ("shl".equals(name)){
+            throw new Exception("shl");
+        }
+        System.out.println("bye bye "+name);
+        System.out.println("---");
+        return name;
+    }
 
 }
