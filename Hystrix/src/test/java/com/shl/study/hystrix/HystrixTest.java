@@ -92,7 +92,7 @@ public class HystrixTest {
 
             for (int i=0;i<100;i++){
 
-                Thread.sleep(100);
+                Thread.sleep(10);
 
                 if (i%4 == 0){
 //                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study")));
