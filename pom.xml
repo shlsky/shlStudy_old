@@ -17,6 +17,8 @@
         <module>Log4j</module>
         <module>jvm</module>
         <module>Hystrix</module>
+        <module>prodconsm</module>
+        <module>prodrcosmr</module>
     </modules>
     <name>shlstudy-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>

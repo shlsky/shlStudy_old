@@ -1,6 +1,5 @@
 package com.shl.study.hystrix;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import javassist.*;
 import javassist.bytecode.AnnotationsAttribute;
 import javassist.bytecode.ConstPool;
@@ -12,8 +11,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-
 /**
  * Created by jackson on 16/8/2.
  */
@@ -22,9 +19,9 @@ public class JavassistStudy implements ApplicationContextAware {
 
     ApplicationContext applicationContext = null;
 
-    public SayHelloAnnotationService listBeanDefine() throws NotFoundException{
+    public SayHelloAnnotationCommand listBeanDefine() throws NotFoundException{
         ClassPool classPool = ClassPool.getDefault();
-        CtClass ct = classPool.get(SayHelloAnnotationService.class.getName());
+        CtClass ct = classPool.get(SayHelloAnnotationCommand.class.getName());
         CtMethod cms = ct.getDeclaredMethod("sayHello");
 
         MethodInfo methodInfo = cms.getMethodInfo();
@@ -50,14 +47,14 @@ public class JavassistStudy implements ApplicationContextAware {
         try {
             ct.writeFile();
             ct.defrost();
-            object =  applicationContext.getAutowireCapableBeanFactory().createBean(SayHelloAnnotationService.class);
+            object =  applicationContext.getAutowireCapableBeanFactory().createBean(SayHelloAnnotationCommand.class);
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return (SayHelloAnnotationService)object;
+        return (SayHelloAnnotationCommand)object;
     }
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

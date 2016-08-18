@@ -5,6 +5,9 @@ package com.shl.jvm;
  */
 public class HelloA {
 
+    public static void demaic(){
+        System.out.println("demaic helloA");
+    }
     public HelloA() {
         System.out.println("HelloA");
     }

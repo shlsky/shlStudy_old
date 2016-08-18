@@ -18,41 +18,43 @@ import java.util.concurrent.Executors;
 public class HystrixTest {
 
     @Autowired
-    private SayHelloAnnotationService helloService;
+    private SayHelloService sayHelloService;
 
     @Autowired
     private JavassistStudy javassistStudy;
 
     @Test
     public void test(){
-//        BeanCopier copier = BeanCopier.create(helloService.getClass(),helloService.getClass(),false);
+//        BeanCopier copier = BeanCopier.create(sayHelloService.getClass(),sayHelloService.getClass(),false);
 //
-//        SayHelloAnnotationService helloService1 = null;
+//        SayHelloAnnotationService sayHelloService1 = null;
 //        try {
-//            helloService1 = helloService.getClass().newInstance();
+//            sayHelloService1 = sayHelloService.getClass().newInstance();
 //        } catch (InstantiationException e) {
 //            e.printStackTrace();
 //        } catch (IllegalAccessException e) {
 //            e.printStackTrace();
 //        }
 //
-////        copier.copy(helloService,helloService1,null);
+////        copier.copy(sayHelloService,sayHelloService1,null);
 //
-//        BeanUtils.copyProperties(helloService,helloService1);
+//        BeanUtils.copyProperties(sayHelloService,sayHelloService1);
 
 
 
 
         try {
-            for (int i=0 ; i<100;i++){
+            sayHelloService.sayHello(null);
+            sayHelloService.sayHello(null);
+            sayHelloService.sayHello(null);
+            sayHelloService.sayHello(null);
+            for (int i=0 ; i<30;i++){
                 Thread.sleep(500);
 
-                if (i%2 == 0)
-                    helloService.sayHello("study");
-                else if (i%3 == 0)
-                    helloService.sayHello(null);
+                if (i%4 == 0)
+                    sayHelloService.sayHello(null);
                 else
-                    helloService.sayHello("shl");
+                    sayHelloService.sayHello("study");
             }
 
 
@@ -64,19 +66,19 @@ public class HystrixTest {
     @Test
     public void modifyAnnotation(){
 
-        SayHelloAnnotationService helloService1 = null;
+        SayHelloAnnotationCommand sayHelloService1 = null;
 
         try {
             for (int i=0;i<3;i++){
-                helloService1 = javassistStudy.listBeanDefine();
+                sayHelloService1 = javassistStudy.listBeanDefine();
             }
 
             for (int i=0 ; i<100;i++){
                 Thread.sleep(500);
 
 
-                helloService.sayHello("shl");
-                helloService1.sayHello("study");
+                sayHelloService.sayHello("shl");
+                sayHelloService1.sayHello("study");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,28 +92,28 @@ public class HystrixTest {
 
             for (int i=0;i<100;i++){
 
-
+                Thread.sleep(100);
 
                 if (i%4 == 0){
-                    executorService.submit(new MultiThread(new SayHelloExtendService("SHL0","SHL0",helloService,"study")));
-//                    SayHelloExtendService helloExtendService = new SayHelloExtendService("SHL0","SHL0",helloService,"study");
+//                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study")));
+//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study");
 //                    String res = helloExtendService.execute();
 //                    System.out.println();
                 }
 
                 else if (i%3 == 0){
-                    executorService.submit(new MultiThread(new SayHelloExtendService("SHL1","SHL1",helloService,null)));
-//                    SayHelloExtendService helloExtendService = new SayHelloExtendService("SHL1","SHL1",helloService,null);
-//                    String res = helloExtendService.execute();
+//                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL1","SHL1",sayHelloService,null)));
+                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL1","SHL1",sayHelloService,null);
+                    String res = helloExtendService.execute();
 //                    System.out.println();
                 }
 //                else{
-//                    SayHelloExtendService helloExtendService = new SayHelloExtendService("SHL","SHL",helloService,"shl");
+//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL","SHL",sayHelloService,"shl");
 //                    System.out.println(helloExtendService.execute());
 //                }
 
             }
-            Thread.sleep(10000);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -121,13 +123,13 @@ public class HystrixTest {
 
     private class MultiThread implements Callable<String>{
 
-        private SayHelloExtendService helloExtendService;
+        private SayHelloExtendsCommand helloExtendService;
         @Override
         public String call() throws Exception {
             return this.helloExtendService.execute();
         }
 
-        public MultiThread(SayHelloExtendService helloExtendService){
+        public MultiThread(SayHelloExtendsCommand helloExtendService){
             this.helloExtendService = helloExtendService;
         }
     }
