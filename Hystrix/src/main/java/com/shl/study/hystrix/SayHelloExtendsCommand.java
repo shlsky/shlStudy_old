@@ -22,7 +22,7 @@ public class SayHelloExtendsCommand extends HystrixCommand<String> {
                                 .withCircuitBreakerRequestVolumeThreshold(5)
                                 .withCircuitBreakerErrorThresholdPercentage(10)
                                 .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
-                                .withMetricsHealthSnapshotIntervalInMilliseconds(10)//采样时间间隔
+                                .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
                 ));
         this.sayHelloService = sayHelloService;
         this.param = param;
@@ -47,7 +47,13 @@ public class SayHelloExtendsCommand extends HystrixCommand<String> {
         if (this.throwable != null){
             System.out.println(throwable.getLocalizedMessage());
         }
-        System.out.println("--------");
+        //如果fallback 抛出异常
+//        boolean fallbackExptest = true;
+//        if (fallbackExptest){
+//            String aa = null;
+//            System.out.println("--------"+aa.length());
+//
+//        }
         return "fallback";
     }
 
