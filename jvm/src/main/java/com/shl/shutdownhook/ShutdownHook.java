@@ -1,4 +1,4 @@
-package com.shl;
+package com.shl.shutdownhook;
 
 /**
  * Created by jackson on 16/8/26.
@@ -9,7 +9,7 @@ public class ShutdownHook {
 
 
 
-        Runnable runnable = new Runnable() {
+        Thread runnable = new Thread() {
             @Override
             public void run() {
                 Runtime.getRuntime().addShutdownHook(new Thread(){
@@ -20,7 +20,7 @@ public class ShutdownHook {
                 });
             }
         };
-        runnable.run();
+        runnable.start();
 
 
         while (true){
