@@ -16,8 +16,9 @@ public class DynamicProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
         System.out.println("DynamicProxy invoke!");
-        ISayHelloService sayHelloService1 = (ISayHelloService)proxied;
-        sayHelloService1.sysHello();
+        //下面两句会导致StackOverflow
+        //ISayHelloService sayHelloService1 = (ISayHelloService)proxy;
+        //sayHelloService1.sysHello();
         return method.invoke(proxied,args);
     }
 
@@ -28,8 +29,5 @@ public class DynamicProxy implements InvocationHandler {
                 new Class[]{ISayHelloService.class},
                 new DynamicProxy(sayHelloService));
         sayHelloService1.sysBye();
-
-
-
     }
 }
