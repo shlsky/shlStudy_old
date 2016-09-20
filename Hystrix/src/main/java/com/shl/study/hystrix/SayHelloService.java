@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SayHelloService {
 
-    public String sayHello(String name) throws Exception{
+    public Integer sayHello(Integer id) throws Exception{
 
         System.out.println("sayHello is invoked!");
-        if (name == null)
+        if (id%4 != 0)
             throw new NullPointerException();
-        System.out.println("bye bye "+name);
+        System.out.println("bye bye "+id%4);
         System.out.println("---");
-        return name;
+        return id;
     }
 }

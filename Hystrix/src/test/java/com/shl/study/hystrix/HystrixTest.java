@@ -1,5 +1,9 @@
 package com.shl.study.hystrix;
 
+import com.netflix.hystrix.HystrixCommand;
+import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.netflix.hystrix.HystrixCommandKey;
+import com.netflix.hystrix.HystrixCommandProperties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,9 +56,9 @@ public class HystrixTest {
                 Thread.sleep(500);
 
                 if (i%4 == 0)
-                    sayHelloService.sayHello(null);
+                    sayHelloService.sayHello(i);
                 else
-                    sayHelloService.sayHello("study");
+                    sayHelloService.sayHello(i);
             }
 
 
@@ -77,7 +81,7 @@ public class HystrixTest {
                 Thread.sleep(10);
 
 
-                sayHelloService.sayHello("shl");
+                sayHelloService.sayHello(1);
                 sayHelloService1.sayHello("study");
             }
         } catch (Exception e) {
@@ -86,11 +90,35 @@ public class HystrixTest {
     }
     @Test
     public void extendtest(){
+        HystrixCommand.Setter setter = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("SHL1"))
+                .andCommandKey(HystrixCommandKey.Factory.asKey("SHL1"))
+                .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
+                        .withExecutionTimeoutInMilliseconds(150000)
+                        .withCircuitBreakerRequestVolumeThreshold(5)
+                        .withCircuitBreakerErrorThresholdPercentage(10)
+                        .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
+                        .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
+                );
 
         try {
             ExecutorService executorService = Executors.newFixedThreadPool(6);
 
             for (int i=0;i<100;i++){
+
+                SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand(setter,sayHelloService,null);
+                Integer res = helloExtendService.execute();
+
+                if (helloExtendService.isCircuitBreakerOpen()){
+                    setter = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("SHL1"))
+                            .andCommandKey(HystrixCommandKey.Factory.asKey("SHL1"))
+                            .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
+                                    .withExecutionTimeoutInMilliseconds(150000)
+                                    .withCircuitBreakerRequestVolumeThreshold(10)
+                                    .withCircuitBreakerErrorThresholdPercentage(10)
+                                    .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
+                                    .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
+                            );
+                }
 
 //                Thread.sleep(10);
 
@@ -103,8 +131,8 @@ public class HystrixTest {
 
                 else if (i%3 == 0){
 //                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL1","SHL1",sayHelloService,null)));
-                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL1","SHL1",sayHelloService,null);
-                    String res = helloExtendService.execute();
+//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand(setter,sayHelloService,null);
+//                    Integer res = helloExtendService.execute();
 //                    System.out.println();
                 }
 //                else{
@@ -121,11 +149,11 @@ public class HystrixTest {
 
     }
 
-    private class MultiThread implements Callable<String>{
+    private class MultiThread implements Callable<Integer>{
 
         private SayHelloExtendsCommand helloExtendService;
         @Override
-        public String call() throws Exception {
+        public Integer call() throws Exception {
             return this.helloExtendService.execute();
         }
 
