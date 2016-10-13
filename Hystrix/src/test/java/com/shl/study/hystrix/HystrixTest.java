@@ -117,15 +117,18 @@ public class HystrixTest {
                                     .withCircuitBreakerErrorThresholdPercentage(10)
                                     .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
                                     .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
+                                    .withCircuitBreakerForceClosed(true)
                             );
                 }
 
 //                Thread.sleep(10);
 
                 if (i%4 == 0){
+                    helloExtendService.getProperties().circuitBreakerForceOpen().get();
+
 //                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study")));
 //                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study");
-//                    String res = helloExtendService.execute();
+                    res = helloExtendService.execute();
 //                    System.out.println();
                 }
 

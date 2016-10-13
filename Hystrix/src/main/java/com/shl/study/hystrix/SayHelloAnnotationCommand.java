@@ -24,9 +24,9 @@ public class SayHelloAnnotationCommand {
                     @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "5"),//最少请求数
                     @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "10")//判断熔断阈值
             })
-    public String sayHello(String name) throws Exception{
+    public Integer sayHello(String name) throws Exception{
 
-        return sayHelloService.sayHello(name);
+        return sayHelloService.sayHello(1);
     }
 
     public String sayHelloFallBack(String id,Throwable throwable){

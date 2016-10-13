@@ -5,11 +5,26 @@ package com.shl.Object;
  */
 public class ObjectClass {
 
+    public static class AA{
+        {
+            System.out.println("A");
+        }
+    }
+
+    public static class Aa{
+        {
+            System.out.println("a");
+        }
+    }
+
     public static void main(String[] args) {
 
         String name = "shl";
         Object object = name;
 
         System.out.println(object.getClass());
+
+        AA a = new AA();
+        System.out.println(a.getClass());
     }
 }
