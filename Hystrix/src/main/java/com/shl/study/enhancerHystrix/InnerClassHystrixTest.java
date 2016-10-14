@@ -4,6 +4,7 @@ import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
 import com.netflix.hystrix.HystrixCommandProperties;
+import com.netflix.hystrix.util.HystrixRollingNumberEvent;
 
 /**
  * Created by jackson on 16/10/13.
@@ -50,7 +51,16 @@ public class InnerClassHystrixTest extends ClusterHystrixCommand<Integer> {
         for (int i=0 ;i<10;i++){
             System.out.println("--------------");
             InnerClassHystrixTest hystrixTest = new InnerClassHystrixTest(setter);
+
+
             System.out.println(hystrixTest.execute());
+            System.out.println(hystrixTest.getMetrics().getHealthCounts().getErrorCount());
+            System.out.println(hystrixTest.getMetrics().getHealthCounts().getTotalRequests());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println("--------------");
         }
 
