@@ -37,7 +37,6 @@ public abstract class ClusterHystrixCommand<R> extends HystrixCommand<R> {
 
         return new HystrixCommand<R>(setter) {
 
-
             @Override
             protected R run() throws Exception {
 
@@ -53,8 +52,13 @@ public abstract class ClusterHystrixCommand<R> extends HystrixCommand<R> {
                     return (R) method.invoke(object, null);
                 }
 
-                if (clusterHealth())
+                if (!clusterHealth())
                     throw new Exception("cluster isn't health");
+                else {
+                    System.out.println("1");
+                }{
+                    System.out.println("2");
+                }
                 return (R) method.invoke(object, null);
 
             }
