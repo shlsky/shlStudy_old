@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmapper >
+    <class name="com.mars.jmapper.Destination">
+        <attribute name="destName">
+            <value name="techName"/>
+        </attribute>
+        <attribute name="languages">
+            <value name="languageList"/>
+        </attribute>
+        <attribute name="systemD">
+            <value name="systemS"/>
+        </attribute>
+    </class>
+    <class name="com.mars.jmapper.SystemD">
+        <attribute name="nameD">
+            <value name="nameS"/>
+        </attribute>
+    </class>
+</jmapper>

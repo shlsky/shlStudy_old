@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmapper >
+    <class name="com.mars.others.Teacher">
+        <attribute name="name">
+            <value name="name"/>
+        </attribute>
+        <attribute name="age">
+            <value name="age"/>
+        </attribute>
+    </class>
+</jmapper>
