@@ -11,7 +11,7 @@ public class SayHelloService {
     public Integer sayHello(Integer id) throws Exception{
 
         System.out.println("sayHello is invoked!");
-        if (id%4 != 0)
+        if (id%5 != 0)
             throw new NullPointerException();
         System.out.println("bye bye "+id%4);
         System.out.println("---");

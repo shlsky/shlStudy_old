@@ -36,6 +36,7 @@ public class SayHelloExtendsCommand extends HystrixCommand<Integer> {
     @Override
     protected Integer getFallback(){
         System.out.println("invoke fallback "+this.param);
+        System.out.println(this.getMetrics().getHealthCounts().getErrorCount());
         if (this.throwable != null){
             System.out.println(throwable.getLocalizedMessage());
         }

@@ -40,6 +40,9 @@ public abstract class ClusterHystrixCommand<R> extends HystrixCommand<R> {
             @Override
             protected R run() throws Exception {
 
+                this.getMetrics();
+
+
                 System.out.println("HystrixCommand.run");
                 final Field this0 = this.getClass().getDeclaredField("this$0");
                 this0.setAccessible(true);

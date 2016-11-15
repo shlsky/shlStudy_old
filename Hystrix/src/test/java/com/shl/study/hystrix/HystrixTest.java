@@ -98,6 +98,7 @@ public class HystrixTest {
                         .withCircuitBreakerErrorThresholdPercentage(10)
                         .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
                         .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
+                        .withCircuitBreakerSleepWindowInMilliseconds(120000)
                 );
 
         try {
@@ -105,43 +106,9 @@ public class HystrixTest {
 
             for (int i=0;i<100;i++){
 
-                SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand(setter,sayHelloService,null);
+                SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand(setter,sayHelloService,i);
                 Integer res = helloExtendService.execute();
-
-                if (helloExtendService.isCircuitBreakerOpen()){
-                    setter = HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("SHL1"))
-                            .andCommandKey(HystrixCommandKey.Factory.asKey("SHL1"))
-                            .andCommandPropertiesDefaults(HystrixCommandProperties.Setter()
-                                    .withExecutionTimeoutInMilliseconds(150000)
-                                    .withCircuitBreakerRequestVolumeThreshold(10)
-                                    .withCircuitBreakerErrorThresholdPercentage(10)
-                                    .withMetricsRollingStatisticalWindowInMilliseconds(300000)//统计的时间窗口置为5分钟,默认是10s(所以上次执演示失败)
-                                    .withMetricsHealthSnapshotIntervalInMilliseconds(1)//采样时间间隔
-                                    .withCircuitBreakerForceClosed(true)
-                            );
-                }
-
-//                Thread.sleep(10);
-
-                if (i%4 == 0){
-                    helloExtendService.getProperties().circuitBreakerForceOpen().get();
-
-//                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study")));
-//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL0","SHL0",sayHelloService,"study");
-                    res = helloExtendService.execute();
-//                    System.out.println();
-                }
-
-                else if (i%3 == 0){
-//                    executorService.submit(new MultiThread(new SayHelloExtendsCommand("SHL1","SHL1",sayHelloService,null)));
-//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand(setter,sayHelloService,null);
-//                    Integer res = helloExtendService.execute();
-//                    System.out.println();
-                }
-//                else{
-//                    SayHelloExtendsCommand helloExtendService = new SayHelloExtendsCommand("SHL","SHL",sayHelloService,"shl");
-//                    System.out.println(helloExtendService.execute());
-//                }
+                Thread.sleep(100);
 
             }
 

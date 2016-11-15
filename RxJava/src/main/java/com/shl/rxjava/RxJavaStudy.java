@@ -133,7 +133,6 @@ public class RxJavaStudy {
     }
     public static void main(String[] args) {
 
-
         System.out.println("main currentThread:" + Thread.currentThread().getId());
         liftUse();
 
