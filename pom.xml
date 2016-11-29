@@ -20,6 +20,7 @@
         <module>prodconsm</module>
         <module>prodrcosmr</module>
         <module>RxJava</module>
+        <module>jdk8</module>
     </modules>
     <name>shlstudy-demo Maven Webapp</name>
     <url>http://maven.apache.org</url>

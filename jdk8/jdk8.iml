@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
-  </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -20,33 +11,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: javassist:javassist:3.12.1.GA" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm-commons:3.3.1" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm-tree:3.3.1" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm-util:3.3.1" level="project" />
-    <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-core:1.4.22" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.archaius:archaius-core:0.4.1" level="project" />
-    <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.8" level="project" />
-    <orderEntry type="library" name="Maven: io.reactivex:rxjava:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-metrics-event-stream:1.4.22" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.2" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-javanica:1.4.22" level="project" />
-    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.6" level="project" />
-    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.6" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:2.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-servo-metrics-publisher:1.4.22" level="project" />
-    <orderEntry type="library" name="Maven: com.netflix.servo:servo-core:0.7.5" level="project" />
-    <orderEntry type="library" name="Maven: com.google.code.findbugs:annotations:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.retrofit2:retrofit:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.2.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.retrofit2:converter-jackson:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.2" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.retrofit2:converter-simplexml:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.simpleframework:simple-xml:2.7.1" level="project" />
     <orderEntry type="library" name="Maven: stax:stax:1.2.0" level="project" />
@@ -70,6 +41,7 @@
     <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:4.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.servlet:2.0.14" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.spring:2.0.14" level="project" />
+    <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.json:2.0.10" level="project" />
     <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.lib.org.json:2.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
@@ -186,6 +158,7 @@
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: xml-resolver:xml-resolver:1.2" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-bindings-soap:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-databinding-jaxb:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-bindings-xml:2.7.3" level="project" />
@@ -203,6 +176,8 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.simple-spring-memcached:simple-spring-memcached:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.6.8" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.8" level="project" />
     <orderEntry type="library" name="Maven: net.spy:spymemcached:2.11.7" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-servlets:8.1.16.v20140903" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-continuation:8.1.16.v20140903" level="project" />
