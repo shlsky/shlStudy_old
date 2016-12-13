@@ -14,7 +14,14 @@
     <import resource="spring/springbean.xml"/>
     <context:annotation-config/>
     <!--添加扫描包路径,不扫描Controller注解的类,@Controller由view-servlet.xml扫描-->
-    <context:component-scan base-package="com.shl.aop.*">
+
+
+    <!--扫描多个包时,不能有星号,必须是包名,下面的配置就不能生效-->
+    <!--<context:component-scan base-package="com.shl.aop.*,com.shl.enums">-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    <!--</context:component-scan>-->
+    <!---->
+    <context:component-scan base-package="com.shl.aop,com.shl.enums">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 

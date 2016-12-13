@@ -1,5 +1,6 @@
 package com.shl.aop.dynamicProxy;
 
+import com.shl.aop.dynamicProxy.ISayhelloService;
 import org.springframework.stereotype.Service;
 
 /**
