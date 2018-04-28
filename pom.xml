@@ -12,7 +12,6 @@
         <org.slf4j-version>1.7.6</org.slf4j-version>
         <org.restlet.version>2.0.14</org.restlet.version>
         <org.restlet.ext.servlet.version>2.0.14</org.restlet.ext.servlet.version>
-        <com.meituan.mobile.hotel-lib.version>1.5.6.5</com.meituan.mobile.hotel-lib.version>
 
         <jetty-servlets.version>8.1.16.v20140903</jetty-servlets.version>
         <mtpmc-common.version>1.4.40</mtpmc-common.version>
@@ -136,84 +135,12 @@
             <version>0.9.1.2</version>
         </dependency>
 
-        <!-- service-common -->
-        <dependency>
-            <groupId>com.meituan.service.mobile</groupId>
-            <artifactId>service-common</artifactId>
-            <version>1.0.7</version>
-            <exclusions>
-                <!-- Exclude jedis -->
-                <exclusion>
-                    <groupId>redis.clients</groupId>
-                    <artifactId>jedis</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
             <version>1.6</version>
         </dependency>
 
-        <!--hotellib -->
-
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-common-lib</artifactId>
-            <version>1.3.7</version>
-        </dependency>
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-pregoods-lib</artifactId>
-            <version>2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.meituan.mobile</groupId>
-            <artifactId>hotel-lib</artifactId>
-            <version>${com.meituan.mobile.hotel-lib.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-price-lib</artifactId>
-            <version>1.1-SNAPSHOT</version>
-        </dependency>
-
-        <!--<dependency>-->
-        <!--<groupId>com.meituan.hotel</groupId>-->
-        <!--<artifactId>hotel-rp-lib</artifactId>-->
-        <!--<version>1.0-SNAPSHOT</version>-->
-        <!--</dependency>-->
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-rp-lib</artifactId>
-            <version>1.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-goods-lib</artifactId>
-            <version>5.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.meituan.hotel</groupId>
-                    <artifactId>hotel-rp-lib</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>hotel-partner-lib</artifactId>
-            <version>1.2.4</version>
-        </dependency>
-
-        <!--hotellib -->
-        <dependency>
-            <groupId>com.meituan.hotel</groupId>
-            <artifactId>mschedule-client</artifactId>
-            <version>1.7.0</version>
-        </dependency>
 
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
@@ -363,11 +290,6 @@
             <version>1.2.0.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>com.meituan</groupId>
-            <artifactId>jmonitor</artifactId>
-            <version>1.4.2</version>
-        </dependency>
-        <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1</version>
@@ -377,28 +299,13 @@
             <artifactId>jsoup</artifactId>
             <version>0.2.2</version>
         </dependency>
-        <dependency>
-            <groupId>com.meituan.scribe</groupId>
-            <artifactId>scribe-log4j</artifactId>
-            <version>1.0.1</version>
-        </dependency>
+
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>2.4.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.meituan.cache</groupId>
-            <artifactId>redis-cluster-client</artifactId>
-            <version>0.9</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.alibaba.fastjson</groupId>
-                    <artifactId>fastjson</artifactId>
-                </exclusion>
-            </exclusions>
-            <!-- 这里请换成要使用的版本，正式发布版本在1.0以上，目前仅有测试版本0.2 -->
-        </dependency>
+
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
@@ -455,18 +362,6 @@
             </exclusions>
         </dependency>
 
-        <!-- thrift相关 -->
-        <dependency>
-            <groupId>com.meituan.service.mobile</groupId>
-            <artifactId>mtthrift</artifactId>
-            <version>1.5.6-SNAPSHOT</version> <!-- 目前最前版本1.1.9 -->
-        </dependency>
-        <dependency>
-            <groupId>com.meituan.mtrace</groupId>
-            <artifactId>mtrace</artifactId>
-            <version>1.0.6-SNAPSHOT</version> <!-- 目前最前版本1.0.5-SNAPSHOT -->
-        </dependency>
-
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
@@ -502,12 +397,7 @@
             <artifactId>lesscss-servlet</artifactId>
             <version>1.3.3</version>
         </dependency>
-        <!-- 监控-->
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mt-log4j1-pattern</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>apache-log4j-extras</artifactId>
@@ -607,45 +497,18 @@
             <version>${jetty-servlets.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mt-service-http</artifactId>
-            <version>${mt-service-http.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpmc-common</artifactId>
-            <version>${mtpmc-common.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpmc-remote-service</artifactId>
-            <version>${mtpmc-remote-service.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sankuai.meituan</groupId>
-            <artifactId>mtpoiop-remote-service</artifactId>
-            <version>${mtpoiop-remote-service.version}</version>
-        </dependency>
-
-        <!-- 美团账号系统  -->
-        <dependency>
-            <groupId>com.meituan.travel</groupId>
-            <artifactId>travel.account.client</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meituan.mafka</groupId>
-            <artifactId>mafka-client</artifactId>
-            <version>1.2.0</version>
-        </dependency>
         <!-- mock测试-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>1.10.19</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.danielbechler</groupId>
+            <artifactId>java-object-diff</artifactId>
+            <version>0.93.2</version>
         </dependency>
 
     </dependencies>
@@ -670,25 +533,6 @@
                     <source>1.6</source>
                     <target>1.6</target>
                     <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>com.meituan.service.mobile</groupId>
-                <artifactId>autoconfig-maven-plugin</artifactId>
-                <version>0.0.1</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <envBase>src/main/resources/META-INF/environments</envBase>
-                    <templateBase>src/main/resources/META-INF/templates</templateBase>
-                    <targetBase>src/main/resources</targetBase>
-                    <config>src/main/resources/META-INF/autoconfig.xml</config>
                 </configuration>
             </plugin>
         </plugins>

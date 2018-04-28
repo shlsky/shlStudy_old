@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.meituan.hotel:hotel-goods-lib:5.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/hotel/hotel-goods-lib/5.1/hotel-goods-lib-5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/hotel/hotel-goods-lib/5.1/hotel-goods-lib-5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/meituan/hotel/hotel-goods-lib/5.1/hotel-goods-lib-5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
